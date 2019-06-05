@@ -4,9 +4,7 @@ import Home from '../Content'
 
 ///
 import CoTich from '../BookContent/OfflineBook/OfflineBookContainer/PDF/CoTich'
-import HoiKi from '../BookContent/OfflineBook/OfflineBookContainer/PDF/HoiKi'
 import TrinhTham from '../BookContent/OfflineBook/OfflineBookContainer/PDF/TrinhTham'
-import LichSu from '../BookContent/OfflineBook/OfflineBookContainer/PDF/LichSu'
 import TieuThuyet from '../BookContent/OfflineBook/OfflineBookContainer/PDF/TieuThuyet'
 import KhoaHoc from '../BookContent/OfflineBook/OfflineBookContainer/PDF/KhoaHoc'
 import SucKhoe from '../BookContent/OfflineBook/OfflineBookContainer/PDF/SucKhoe'
@@ -26,12 +24,6 @@ const RootStack = createStackNavigator ({
   },
   TrinhTham: {
     screen : TrinhTham
-  },
-  HoiKi: {
-    screen : HoiKi
-  },
-  LichSu: {
-    screen : LichSu
   },
   TieuThuyet: {
     screen : TieuThuyet

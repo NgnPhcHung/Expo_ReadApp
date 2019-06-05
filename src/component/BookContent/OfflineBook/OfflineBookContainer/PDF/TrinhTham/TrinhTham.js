@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import { View, Dimensions, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import TTModal from './TTModal'
 
 export default class TrinhTham extends Component {
 
   render() {
-    const { name, img } = this.props
-    console.log('./img/' + img + '.jpg')
     return (
       <View style={styles.container} >
-        <Text style= {styles.text} > {name} </Text>
-       
+        <Text style= {styles.text} > {hihi} </Text>
+        <Text>Quac</Text>
       </View>
     )
   }

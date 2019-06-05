@@ -1,24 +1,13 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, Image, Dimensions } from 'react-native'
-import Data from './Data'
 import TrinhTham from './TrinhTham'
 
 export default class index extends Component {
   render() {
-    console.log(Data[0].url)
     return (
       <View >
-        <ScrollView>
-          {
-            Data.map((e, i) =>
-              <TrinhTham
-                name={e.name}
-                url={e.url}
-                img={e.img}
-                key={i}
-              />)
-          }
-        </ScrollView>
+        
+        <Text>????/</Text>
       </View>
     )
   }

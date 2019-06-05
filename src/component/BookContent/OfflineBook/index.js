@@ -4,6 +4,27 @@ import BookChoice from './BookChoice'
 import choices from './Data'
 
 export default class index extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      items: [],
+      isLoading: false
+    }
+  }
+
+  // componentDidMount() {
+  //   fetch('https://gist.githubusercontent.com/phuchung00/bc35ab0322a49d4e4355f1a837f9b259/raw/58df4be5f8426fbcdac2f3c918834185f019260d/vhvn.json')
+  //   .then(res => res.json())
+  //   .then(json => {
+  //     this.setState({
+  //       isLoading:true,
+  //       items:json
+  //     })
+  //     console.log(json)
+  //   })
+  // }
+
 
   render() {
     const { isOpenModalReducer, change } = this.props
@@ -13,14 +34,14 @@ export default class index extends Component {
         <ScrollView>
           {
             choices.map((e, i) =>
-                <BookChoice
-                  choice={e.choice}
-                  link={e.link}
-                  isOpen = { this.props.isOpenModalReducer }
-                  change = { this.props.change }
-                  key={i}
-                  navigate = { this.props.navigation.navigate }
-                />
+              <BookChoice
+                choice={e.choice}
+                link={e.link}
+                isOpen={this.props.isOpenModalReducer}
+                change={this.props.change}
+                key={i}
+                navigate={this.props.navigation.navigate}
+              />
             )
           }
         </ScrollView>

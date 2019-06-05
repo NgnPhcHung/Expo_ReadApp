@@ -3,13 +3,9 @@ import { View, StyleSheet,Dimensions } from 'react-native'
 
 export default class CoTich extends Component {
   render() {
-    const { bookURL } = this.props
     return (
-      <View style = { StyleSheet.container } >
-        <Pdf 
-          sourse = { bookURL }
-          style = { styles.pdf }
-        />      
+      <View style = { styles.container } >
+             
       </View>
     )
   }
