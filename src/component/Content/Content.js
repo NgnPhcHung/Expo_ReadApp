@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { View, TouchableHighlight, StyleSheet, Text, ImageBackground } from 'react-native'
-import FirebaseTest from './FireBaseTest'
 import CustomButton from '../Button/ButtonCustom'
 
 import Logo from './Logo'

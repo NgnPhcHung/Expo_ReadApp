@@ -3,34 +3,38 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 export default class BookChoice extends Component {
 
-  navigate = (link) => {
+  navigate = (link, api) => {
     const { navigate } = this.props;
-    navigate(link)
-    console.log('this is link:  ', this.props.link)
+    navigate(link, api)
 
   }
 
   render() {
-    const { choice, link } = this.props
-    console.log('this is openn:  ', this.props.isOpen)
-
-    console.log('this is navigate:  ', this.navigate)
+    const { choice, index, api } = this.props
     return (
-      <View style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: '10%', marginTop: '10%'
-      }} >
-        <Image
-          style={{ resizeMode: 'contain', width: 40, height: 50, rotation:30 }}
-          source={require('../../../../public/image/logoBook.png')}
-        />
-        <TouchableOpacity
-          onPress={() => this.navigate(link)}>
+      <TouchableOpacity
+        onPress={() => this.navigate("KindInfo", { api: api, choice: choice })}>
+        <View style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: 10,
+          marginTop: 10,
+          paddingBottom:'10%',
+          paddingTop:-10,
+          backgroundColor: this.props.index % 2 == 0 ? "" : "#F2F4F4",
+          borderBottomWidth: 5,
+          borderBottomColor:'#AEB6BF',
+          borderRightWidth:3,
+          borderRightColor:'#AEB6BF',
+          borderRadius:10
+        }} >
+          <Image
+            style={styles.image}
+            source={require('../../../../public/image/logoBook.png')}
+          />
           <Text style={styles.text}>{choice}</Text>
-        </TouchableOpacity>
-
-      </View>
+        </View>
+      </TouchableOpacity>
     )
   }
 }
@@ -40,5 +44,12 @@ const styles = {
     fontSize: 25,
     alignItems: 'center',
     justifyContent: 'center',
-  }
+    
+  },
+  image: {
+    resizeMode: 'contain',
+    width: 40,
+    height: 50,
+  },
+  
 }
