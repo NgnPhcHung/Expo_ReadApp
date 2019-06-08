@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TouchableHighlight, StyleSheet, Text, ImageBackground } from 'react-native'
+import { View, TouchableHighlight, StyleSheet, Text, Image } from 'react-native'
 import CustomButton from '../Button/ButtonCustom'
 
 import Logo from './Logo'
@@ -17,18 +17,22 @@ export default class Content extends Component {
   }
   render() {
     return (
-      <View>  
-        <ImageBackground source={require('../../../public/image/bg.jpg')} style = {{ width:'100%', height:'100%' }} >
-          <View>
-            <Logo />
-          </View>
-          <View style={styles.btn}>
+      <View>
+        <View>
+          <Logo />
+        </View>
+        <View style={styles.btn}>
+          <Image
+            style={styles.img}
+            source={require('../../../public/image/walking_pikachu.gif')}
+          />
+          <View style = {styles.btnContainer} >
             <CustomButton
               onPress={() => this.props.navigation.navigate('Details')}
-              text="Đọc Luôn"
+              text="Đọc Online"
             />
           </View>
-        </ImageBackground> 
+        </View>
       </View>
     )
   }
@@ -41,8 +45,14 @@ const styles = StyleSheet.create({
   btn: {
     alignItems: 'center',
     justifyContent: 'center',
-    top: '5.2%', 
-    left:'4.7%',
+
   },
-  
+  img: {
+    height: 300,
+    width: 200,
+    resizeMode: 'contain'
+  },
+  btnContainer:{
+    flexDirection:'row',
+  }
 })

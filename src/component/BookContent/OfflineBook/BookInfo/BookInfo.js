@@ -18,7 +18,7 @@ export default class BookInfo extends Component {
               style={styles.img}
               source={{ uri: image }}
             />
-            <Text style={styles.txt} >{this.props.title}</Text>
+              <Text style={styles.txt} >{this.props.title}</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -40,21 +40,23 @@ const styles = {
     borderColor: '#d6d7da',
     alignItems: 'center',
     justifyContent: 'center',
-    position:'relative'
+    position: 'relative'
   },
   txt: {
     position:'absolute',
     fontWeight: 'bold',
     fontSize: 20,
-    color: '#5DADE2',
-    marginLeft: 10,
-    marginRight:10,
-    bottom:-60,
+    color: '#FDFEFE',
+    top: 20,
+    backgroundColor: '#2E4053',
+    padding:10,
+    borderRadius:10,
   },
   container: {
     marginTop: 20,
     marginBottom: 50,
     alignItems: 'center',
     justifyContent: 'center',
+    position:'relative'
   }
 }

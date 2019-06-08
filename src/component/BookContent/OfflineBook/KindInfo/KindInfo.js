@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, FlatList } from 'react-native'
+import { View, Text, ScrollView, FlatList, Image } from 'react-native'
 import BookInfo from '../BookInfo/BookInfo'
 
 export default class KindInfo extends Component {
@@ -30,7 +30,7 @@ export default class KindInfo extends Component {
   }
 
   _renderItem = ({ item, index }) => (
-    <View style ={{ marginLeft:'5%' }} >
+    <View style={{ marginLeft: '5%' }} >
       <BookInfo
         title={item.name}
         url={item.url}
@@ -43,12 +43,15 @@ export default class KindInfo extends Component {
   )
 
   render() {
-    // console.log(this.props.navigation.state.params.api)
     const { items, isLoading } = this.state
     if (!isLoading) {
       return (
         <View>
-          <Text>Chờ tý, đang kiếm sách...</Text>
+        <Text style = { styles.text } >Nếu bạn thấy lâu thì nhớ bật internet lên nha...</Text>
+          <Image
+            style={ styles.featch }
+            source={require('../../../../../public/image/featchapi-Loading.gif')}
+          />
         </View>
       )
     }
@@ -67,18 +70,16 @@ export default class KindInfo extends Component {
     )
   }
 }
-
-{/* <ScrollView horizontal={false} >
-  {
-    items.map((e, i) =>
-      <BookInfo
-        title={e.name}
-        url={e.url}
-        image={e.image}
-        index = { i }
-        navigate={this.props.navigation.navigate}
-        key={i}
-      />
-    )
+const styles = {
+  featch: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 400,
+    width: 350,
+    resizeMode: 'contain'
+  },
+  text:{
+    fontSize:16,
+    color:'#5499C7'
   }
-</ScrollView> */}
+}

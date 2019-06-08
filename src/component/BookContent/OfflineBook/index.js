@@ -18,6 +18,9 @@ export default class index extends Component {
 
     return (
       <View style={styles.container} >
+      <View style = { styles.textContainer } >
+        <Text style = { styles.text } >Các thể loại sách hiện có</Text>
+      </View>
         <FlatList
           data={choices}
           renderItem={ this._renderItem }
@@ -27,20 +30,7 @@ export default class index extends Component {
     )
   }
 }
-{/* <ScrollView>
-  {
-    choices.map((e, i) =>
-      <BookChoice
-        choice={e.choice}
-        link={e.link}
-        api={e.api}
-        index = {i}
-        key={i}
-        navigate={this.props.navigation.navigate}
-      />
-    )
-  }
-</ScrollView> */}
+
 const styles = {
   container: {
     flex: 1,
@@ -52,4 +42,28 @@ const styles = {
     flex: 1,
     width: Dimensions.get('window').width,
   },
+  text : {
+    fontWeight:'bold',
+    fontSize:20,
+    paddingTop: '2%',
+    paddingBottom:'2%',
+    paddingLeft:'10%',
+    paddingRight:'10%',
+    borderWidth:4,
+    borderColor:'#34495E',
+    borderRadius:10,
+    borderLeftWidth:0,
+    borderTopWidth:0,
+    borderRightWidth:0,
+  },
+  textContainer:{
+    marginBottom: '10%',
+    marginTop:'3%',
+    borderWidth:6,
+    borderColor:'#AEB6BF',
+    borderRadius:10,
+    borderLeftWidth:0,
+    borderTopWidth:0,
+    opacity:0.5
+  }
 }
