@@ -29,10 +29,7 @@ const styles = StyleSheet.create({
   },
 
   buttonStyle: {
-    paddingLeft: 18,
-    paddingRight: 18,
-    paddingTop: 50,
-    paddingBottom:50,
+    padding: 18,
     backgroundColor: '#202646',
     borderRadius: 200,
     opacity: .9

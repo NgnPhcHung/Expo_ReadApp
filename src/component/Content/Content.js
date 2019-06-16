@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { View, TouchableHighlight, StyleSheet, Button, Text, Image } from 'react-native'
+import { View, TouchableHighlight, StyleSheet, Button, Text, Image, ImageBackground } from 'react-native'
 import CustomButton from '../Button/ButtonCustom'
-
-import Logo from './Logo'
 
 export default class Content extends Component {
 
@@ -25,25 +23,24 @@ export default class Content extends Component {
   render() {
     return (
       <View>
-        <View>
-          <Logo />
-        </View>
+      <ImageBackground source = {require('../../../public/image/Background.jpeg')} style={{width: '100%', height: '100%', }} >
         <View style={styles.btn}>
-          <Image
-            style={styles.img}
-            source={require('../../../public/image/walking_pikachu.gif')}
-          />
           <View style={styles.btnContainer} >
             <CustomButton
               onPress={() => this.props.navigation.navigate('Details')}
               text="Đọc sách"
             />
-            <Button
-              onPress={() => this.change()}
-              title='change'
+            <View
+              style = {{ paddingTop: '15%' }}
+            >
+            <CustomButton
+              onPress={() => this.props.navigation.navigate('About')}
+              text='Thông tin ứng dụng'
             />
+            </View>
           </View>
         </View>
+        </ImageBackground>
       </View>
     )
   }
@@ -56,7 +53,7 @@ const styles = StyleSheet.create({
   btn: {
     alignItems: 'center',
     justifyContent: 'center',
-
+    top: '40%'
   },
   img: {
     height: 300,
@@ -64,6 +61,6 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   btnContainer: {
-    flexDirection: 'row',
+    
   }
 })

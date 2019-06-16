@@ -30,8 +30,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
   },
   webview: {
-    marginTop: -400,
-    marginLeft:-80,
-    marginRight:-80,
+    marginTop: -50
   }
 });
