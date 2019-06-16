@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, ScrollView, Text, Dimensions, TouchableHighlight, FlatList } from 'react-native'
+import { View, ScrollView, Text, Dimensions, Button, FlatList } from 'react-native'
 import BookChoice from './BookChoice'
 import choices from './Data'
 
@@ -14,8 +14,6 @@ export default class index extends Component {
   /> )
 
   render() {
-    const { isOpenModalReducer, change } = this.props
-
     return (
       <View style={styles.container} >
       <View style = { styles.textContainer } >

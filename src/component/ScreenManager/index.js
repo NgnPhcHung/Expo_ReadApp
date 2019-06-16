@@ -1,7 +1,7 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation'
-import BookMS from '../../container/OfflineBook'
-import Home from '../Content'
-import Offline from '../BookContent/OnlineBook'
+import BookMS from '../BookContent/OfflineBook/index'
+import Home from '../../container/OfflineBook'
+import About from '../Content/About'
 ///
 
 import KindBook from '../BookContent/OfflineBook/KindInfo/KindInfo'
@@ -20,14 +20,17 @@ const RootStack = createStackNavigator ({
       header:null
     }
   },
-  Offline:{
-    screen :Offline,
+  About: {
+    screen:About,
     navigationOptions:{
       header:null
     }
   },
   KindInfo: {
-    screen : KindBook
+    screen : KindBook,
+    navigationOptions:{
+      header:null
+    }
   },
   BookInfor:{
     screen: BookInfor

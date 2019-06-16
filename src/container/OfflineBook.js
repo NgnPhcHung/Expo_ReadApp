@@ -1,11 +1,11 @@
 import {connect} from 'react-redux'
-import OfflineBook from '../component/BookContent/OfflineBook'
+import OfflineBook from '../component/Content/Content'
 import { openModalAction } from '../reducer/OfflineBook'
 
 const mapStateToProps = state => {
-  const { isOpenModalReducer } = state
+  const { isChange } = state
   return {
-    isOpenModalReducer,
+    isChange,
   }
 }
 const mapDispatchToProps = dispatch => {

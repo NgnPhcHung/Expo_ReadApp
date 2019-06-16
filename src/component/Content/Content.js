@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TouchableHighlight, StyleSheet, Text, Image } from 'react-native'
+import { View, TouchableHighlight, StyleSheet, Button, Text, Image } from 'react-native'
 import CustomButton from '../Button/ButtonCustom'
 
 import Logo from './Logo'
@@ -15,6 +15,13 @@ export default class Content extends Component {
       paddingLeft: "35%"
     }
   }
+
+  change = (isChange) => {
+    const { change } = this.props
+    change(isChange)
+    console.log(this.props.isChange)
+  }
+
   render() {
     return (
       <View>
@@ -26,10 +33,14 @@ export default class Content extends Component {
             style={styles.img}
             source={require('../../../public/image/walking_pikachu.gif')}
           />
-          <View style = {styles.btnContainer} >
+          <View style={styles.btnContainer} >
             <CustomButton
               onPress={() => this.props.navigation.navigate('Details')}
-              text="Đọc Online"
+              text="Đọc sách"
+            />
+            <Button
+              onPress={() => this.change()}
+              title='change'
             />
           </View>
         </View>
@@ -52,7 +63,7 @@ const styles = StyleSheet.create({
     width: 200,
     resizeMode: 'contain'
   },
-  btnContainer:{
-    flexDirection:'row',
+  btnContainer: {
+    flexDirection: 'row',
   }
 })

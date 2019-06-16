@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import {isOpenModalReducer} from './OfflineBook/index'
+import {isChange} from './OfflineBook/index'
 
 export default combineReducers ({
-  isOpenModalReducer
+  isChange
 })

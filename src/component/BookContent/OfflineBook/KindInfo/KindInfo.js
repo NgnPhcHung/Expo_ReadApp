@@ -25,7 +25,6 @@ export default class KindInfo extends Component {
           isLoading: true,
           items: json
         })
-        console.log(json)
       })
   }
 
@@ -43,13 +42,15 @@ export default class KindInfo extends Component {
   )
 
   render() {
+    // console.log(this.props.navigation.state.params.choice)
+    const { choice } = this.props.navigation.state.params
     const { items, isLoading } = this.state
     if (!isLoading) {
       return (
-        <View>
-        <Text style = { styles.text } >Nếu bạn thấy lâu thì nhớ bật internet lên nha...</Text>
+        <View style={{ top: 50 }} >
+          <Text style={styles.text} >Nếu bạn thấy lâu thì nhớ bật internet lên nha...</Text>
           <Image
-            style={ styles.featch }
+            style={styles.featch}
             source={require('../../../../../public/image/featchapi-Loading.gif')}
           />
         </View>
@@ -57,8 +58,11 @@ export default class KindInfo extends Component {
     }
 
     return (
-      <View style={{ backgroundColor: '#EAEDED' }} >
+      <View style={{ backgroundColor: '#EAEDED', paddingTop: 50 }} >
         <View style={{ marginLeft: 20 }} >
+          <View>
+            <Text style={styles.fetchedTxt} >Đây là thể loại {choice}</Text>
+          </View>
           <FlatList
             data={this.state.items}
             renderItem={this._renderItem}
@@ -78,8 +82,14 @@ const styles = {
     width: 350,
     resizeMode: 'contain'
   },
-  text:{
-    fontSize:16,
-    color:'#5499C7'
+  text: {
+    fontSize: 16,
+    color: '#5499C7'
+  },
+  fetchedTxt: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    opacity: 0.4,
+    textAlign: 'center',
   }
 }

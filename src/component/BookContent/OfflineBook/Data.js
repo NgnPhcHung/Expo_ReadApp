@@ -18,7 +18,7 @@ const choices = [
   {
     choice: "Sách Cổ Tích",
     link: 'CoTich ',
-    api: 'https://gist.githubusercontent.com/phuchung00/9b8e749ff6358467e722a3e1b64e29d6/raw/35be8522c002e398feebc3cbfa6269fab0122e14/coTich.json',
+    api: 'https://gist.githubusercontent.com/phuchung00/9b8e749ff6358467e722a3e1b64e29d6/raw/8f20b7564c2f1f5d5d30bc63a151a500de0a4c7f/coTich.json',
   },
   {
     choice: "Sách Tâm Lý",

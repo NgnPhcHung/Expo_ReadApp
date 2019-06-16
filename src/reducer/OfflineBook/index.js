@@ -1,4 +1,3 @@
-
 const ONLINEBOOK_ISOPEN = 'action/ISOPEN'
 
 export const openModalAction = () => {
@@ -9,7 +8,7 @@ export const openModalAction = () => {
 
 const isOpen = false
 
-export const isOpenModalReducer  = ( state = isOpen, action ) =>{
+export const isChange  = ( state = isOpen, action ) =>{
   switch (action.type) {
     case ONLINEBOOK_ISOPEN : {
       const newState = !state;
