@@ -1,10 +1,11 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 import BookMS from '../BookContent/OfflineBook/index'
-import Home from '../../container/OfflineBook'
-import About from '../Content/About'
+import Home from '../../container/Content'
+import About from '../../container/About'
+import Note from '../../container/Note'
 ///
 
-import KindBook from '../BookContent/OfflineBook/KindInfo/KindInfo'
+import KindBook from '../../container/KindInf'
 import BookInfor from '../BookContent/OfflineBook/BookInfo/BookInfo'
 import BookView from '../BookContent/OfflineBook/BookInfo/BookView'
 const RootStack = createStackNavigator ({
@@ -22,6 +23,12 @@ const RootStack = createStackNavigator ({
   },
   About: {
     screen:About,
+    navigationOptions:{
+      header:null
+    }
+  },
+  Note: {
+    screen:Note,
     navigationOptions:{
       header:null
     }

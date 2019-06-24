@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, FlatList, Image } from 'react-native'
+import { View, Text, ScrollView, FlatList, Image, TouchableOpacity } from 'react-native'
 import BookInfo from '../BookInfo/BookInfo'
+import { AntDesign } from '@expo/vector-icons';
 
 export default class KindInfo extends Component {
-  static navigationOptions = {
-    title: 'Sách các loại nè ',
-  };
 
   constructor(props) {
     super(props)
@@ -16,16 +14,34 @@ export default class KindInfo extends Component {
     }
   }
 
-  componentDidMount() {
-    const { api } = this.props.navigation.state.params
+  static navigationOptions = {
+    title: 'Sách các loại nè ',
+  };
+
+  iLoading = () => {
+    const { change } = this.props
+    console.log(this.props.isLoading)
+    change()
+
+  }
+
+  book = (api) => {
+    console.log(api)
     fetch(api)
       .then(res => res.json())
       .then(json => {
         this.setState({
-          isLoading: true,
-          items: json
-        })
+          items: json,
+          isLoading: !this.state.isLoading
+        },
+          // () => this.iLoading()
+        )
       })
+  }
+
+  componentDidMount() {
+    const { api } = this.props.navigation.state.params
+    this.book(api)
   }
 
   _renderItem = ({ item, index }) => (
@@ -40,11 +56,15 @@ export default class KindInfo extends Component {
       />
     </View>
   )
-
+  navigate = () => {
+    const { navigate } = this.props.navigation.state.params
+    navigate()
+  }
   render() {
-    // console.log(this.props.navigation.state.params.choice)
+    // console.log("this navigate",this.props.navigation.state.params.choice)
     const { choice } = this.props.navigation.state.params
-    const { items, isLoading } = this.state
+    const { isLoading } = this.state
+    console.log(this.props.isLoading)
     if (!isLoading) {
       return (
         <View style={{ top: 50 }} >
@@ -63,12 +83,21 @@ export default class KindInfo extends Component {
           <View>
             <Text style={styles.fetchedTxt} >Đây là thể loại {choice}</Text>
           </View>
-          <FlatList
-            data={this.state.items}
-            renderItem={this._renderItem}
-            keyExtractor={(item, index) => index}
-            numColumns={2}
-          />
+          <View style={{ position: 'relative', paddingBottom: '3%', marginBottom: 10 }} >
+            <FlatList
+              data={this.state.items}
+              renderItem={this._renderItem}
+              keyExtractor={(item, index) => index}
+              numColumns={2}
+            />
+          </View>
+          <View style={{ position: 'absolute', top: '85%', alignSelf: 'flex-end', right: 10 }} >
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Note')}
+            >
+              <AntDesign name="tags" size={55} color="#F5B7B1" />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     )

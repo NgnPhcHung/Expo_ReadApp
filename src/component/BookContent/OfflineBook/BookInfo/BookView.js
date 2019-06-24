@@ -3,9 +3,7 @@ import { WebView, StyleSheet, View } from 'react-native'
 import { Constants } from 'expo';
 
 export default class BookView extends Component {
-  handleOnScroll = () => {
-    console.log("chao");
-  }
+
   render() {
     const { url } = this.props.navigation.state.params
     return (
@@ -18,12 +16,6 @@ export default class BookView extends Component {
     )
   }
 }
-// window.addEventListener('scroll', function(e) {
-//   e.preventDefault();
-//   i += 1;
-//   this.state.scroll = i
-//   console.log('this is book scroll'+ this.state.scroll)
-// });
 const styles = StyleSheet.create({
   container: {
     flex: 1,

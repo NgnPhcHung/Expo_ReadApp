@@ -1,17 +1,17 @@
-const ONLINEBOOK_ISOPEN = 'action/ISOPEN'
+const BOOK_CHANGELOADING = 'action/CHANGELOADING'
 
-export const openModalAction = () => {
+export const isLoading = false 
+
+export const changeAction = () =>{
   return {
-    type: ONLINEBOOK_ISOPEN,
+    type:BOOK_CHANGELOADING
   }
 }
-
-const isOpen = false
-
-export const isChange  = ( state = isOpen, action ) =>{
-  switch (action.type) {
-    case ONLINEBOOK_ISOPEN : {
-      const newState = !state;
+export const isLoadingReducer = ( state = isLoading,action )=>{
+  switch(action.type){
+    case BOOK_CHANGELOADING:{
+      const newState = !state
+      console.log("NewState  " +newState)
       return newState
     }
     default: return state
