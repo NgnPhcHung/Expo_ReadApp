@@ -113,7 +113,8 @@ const styles = {
   },
   text: {
     fontSize: 16,
-    color: '#5499C7'
+    color: '#5499C7', 
+    marginLeft: 20
   },
   fetchedTxt: {
     fontSize: 20,

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ReadToday",
-    "slug": "ReadToday",
+    "name": "Đọc sách mỗi ngày",
+    "slug": "Đọc sách mỗi ngày",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
